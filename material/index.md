@@ -1,3 +1,10 @@
+---
+title: Insper - SuperComputação 
+description: Página oficial da disciplina SuperComputação do Insper – materiais, projetos, horários de aula e objetivos de aprendizagem.
+author: Lícia Sales
+robots: index, follow
+---
+
 # SuperComputação
 Bem-vindo ao curso de SuperComputação 2025/2!
 
