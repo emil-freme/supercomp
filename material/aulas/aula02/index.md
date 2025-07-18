@@ -57,7 +57,7 @@ Conecte-se ao cluster usando o comando:
 ssh -i $env:USERPROFILE\.ssh\id_rsa login@ip_do_cluster
 ```
 
-### Configurar o VS Code para Acesso Remoto ao Cluster**
+### Configurar o VS Code para Acesso Remoto ao Cluster
 
 **Instale a Extensão Remote - SSH**:
 
@@ -93,7 +93,7 @@ O VS Code abrirá uma nova janela conectada ao ambiente remoto do cluster.
 Um arquivo .slurm é usado para "lançar jobs" no sistema SLURM, especificando os recursos necessários para a execução, como memória, número de máquinas e núcleos. Nesse arquivo, também definimos como desejamos o output do executável e onde o sistema pode encontrar o arquivo a ser executado. Como a equipe que gerencia o Cluster definiu que os jobs sejam lançados apenas da pasta SCRATCH, podemos omitir o caminho do arquivo nos nossos arquivos .slurm.
 
 !!! warning
-      As instruções #SBATCH são tecnicamente consideradas "comentários" pelo interpretador de comandos do shell (bash), mas não são realmente ignoradas. Quando você escreve um script para ser executado pelo SLURM, o bash interpreta as linhas #SBATCH como comentários normais, enquanto o gerenciador de jobs SLURM interpreta essas mesmas linhas como diretivas que definem como o job deve ser executado.
+      As instruções **#SBATCH** são tecnicamente consideradas "comentários" pelo interpretador de comandos do shell (bash), **mas não são realmente ignoradas**. Quando você escreve um script para ser executado pelo SLURM, o bash interpreta as linhas #SBATCH como comentários normais, enquanto o gerenciador de jobs SLURM interpreta essas mesmas linhas como **diretivas que definem como o job deve ser executado.**
 
 !!! tip 
       Não é necessário neste momento, mas se você quiser transferir arquivos da sua máquina para o cluster e vice versa, você pode usar o comando scp [mais detalhes aqui](../../teoria/comandos-ssh.md)
@@ -114,7 +114,7 @@ Antes de começar a fazer pedidos de recursos pro SLURM, vamos conhecer os difer
 ### Comando SRUN
 
 ```bash
-srun --partition=cpu_normal --ntasks=1 --cpus-per-task=1 --mem=1G --time=00:05:00 \
+srun --partition=normal --ntasks=1 --cpus-per-task=1 --mem=1G --time=00:05:00 \
      --pty bash -c "hostname && cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Swap' && lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'"
 
 ```
@@ -207,6 +207,7 @@ srun --partition=normal --ntasks=1 --cpus-per-task=1 --mem=1G --time=00:05:00 \
      --pty bash -c "hostname && cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Swap' && lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'"
 
 ```
+
 
 # Atividade 02
 
