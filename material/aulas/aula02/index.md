@@ -336,7 +336,7 @@ Após a execução dos jobs, os resultados estarão disponíveis nos arquivos `.
  
    - Discuta o impacto do ambiente HPC no desempenho das implementações, qual fila teve o melhor desempenho, porque?.
 
-   - Submeta seu relatório até as **23h59 de hoje pelo Classroom, disponível no Blackboard.**
+   - Submeta seu relatório até as **08h30 de segunda-feira 18/08, . pelo Classroom, link disponível no Blackboard.**
 
 
 
