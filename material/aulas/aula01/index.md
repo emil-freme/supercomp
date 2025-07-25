@@ -1,18 +1,3 @@
-Problemas de HPC, 
-Relembrando mapa de memória; 
-O que importa de C++ para nós; 
-Python x C++; 
-
-Objetivos de aprendizagem; 
-
-Transcrever códigos Python para C++; 
-Comparar desempenho de linguagens. 
-
-Primeira atividade
-
-
-
-Power point
 
 Durante a aula, vimos que problemas computacionalmente complexos podem ser 
 - Grandes, uma quantidade de dados absurda, que não cabe em um computador de trabalho comum
@@ -205,7 +190,7 @@ int main() {
 * Gráfico de comparação
 * Comentários sobre o que influenciou o desempenho
 
-**Entrega até quinta 23h59 pelo link do GitHub Classroom, disponível no Blackboard.**
-
+**Entrega até quinta 23h59 pelo link do [GitHub Classroom](https://classroom.github.com/a/GoLn_7KP), também disponível no Blackboard.**
+Lembre-se de preencher o [forumlário](https://forms.gle/K9FK8be9HjoJ4ypGA) para criar o seu acesso ao Cluster Franky, ele será usado a partir da próxima aula!
 !!! tip "Dica!"
     Lembre-se de consultar o material disponível em [Conteúdo teórico de apoio - Aula 01](../../teoria/aula01/index.md)
