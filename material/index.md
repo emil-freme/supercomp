@@ -30,31 +30,21 @@ O curso é estruturado em duas unidades principais, dois projetos e um projeto e
     2. **Projeto 1**
     3. **Programação paralela e distribuída em GPU**
     4. **Projeto 2**
-    5. **Projeto Extra**
 
 ## Objetivos de aprendizagem
-No Insper, cada disciplina é guiada por **objetivos de aprendizagem**. Para evoluir na matéria e ser aprovado, é essencial que você atinja esses objetivos.
-
-Todos os conteúdos, atividades e projetos estão conectados diretamente a esses objetivos, nada é colocado no curso por acaso. Ao longo das aulas, deixamos claro **o que será estudado e qual objetivo está sendo trabalhado em cada momento**.
-
-Você pode consultar o detalhamento completo dos conteúdos e objetivos [neste link](sobre.md).
-
+No Insper, cada disciplina é guiada por **objetivos de aprendizagem**. Para evoluir na matéria e ser aprovado, é essencial que você atinja esses objetivos. Todos os conteúdos, atividades e projetos estão conectados diretamente a esses objetivos. 
+Você pode consultar o detalhamento completo do curso [neste link](sobre.md).
 
 !!!example "Notas"
-    - **Atividades - 5%**.
+    - **Atividades - 15%**.
     - **Projeto 1 - 15%**
-    - **Prova Intermediária - 20%**
-    - **Projeto 2 - 25%**
-    - **Prova Final - 30%**
-    - **Projeto Extra - 5%**
-
-!!! warning "Atenção!"
-    O projeto extra só poderá ser realizado caso o **Projeto 1 tenha atingido pelo menos a Rúbrica B e tenha sido entregue no prazo.** 
-    
+    - **Avaliação Intermediária - 25%**
+    - **Projeto 2 - 15%**
+    - **Avaliação Final - 30%**
 
 ## Equipe
 
 !!! people "Equipe atual"
-    - ![Lícia](equipe/licia.png) **Lícia Sales** *Professora*
+    - ![Lícia](equipe/licia.jpeg) **Lícia Sales** *Professora*
     - ![Victor](equipe/victor.jpg) **Victor Cordeiro** *Técnico do lab.*
   
