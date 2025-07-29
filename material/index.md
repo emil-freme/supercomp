@@ -23,7 +23,7 @@ Essa página contém os materiais de apoio para o curso de SuperComputação do 
 
 ## Estrutura do Curso
 
-O curso é estruturado em duas unidades principais, dois projetos e um projeto extra:
+O curso é estruturado da seguinte forma:
 
 !!! example "Estrutura do Curso"
     1. **Programação paralela e distribuída em CPU**

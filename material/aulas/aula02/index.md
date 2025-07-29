@@ -335,12 +335,16 @@ Após a execução dos jobs, os resultados estarão disponíveis nos arquivos `.
 
 
 **Entrega Atividade 2 - Relatório de Desempenho:**
-   
-   - Prepare um relatório detalhado, incluindo gráficos contendo o tempo de execução para cada implementação.
- 
-   - Discuta o impacto do ambiente HPC no desempenho das implementações, qual fila teve o melhor desempenho, porque?.
 
-   - Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom](https://classroom.github.com/a/OKSGuF-b), link também disponível no Blackboard.**
+No arquivo README.md do Classroom, inclua:
+
+* Identificação: seu nome completo.
+
+* Relatório: apresente os resultados obtidos em cada implementação, acompanhados de gráficos que mostrem o tempo de execução para cada caso testado.
+
+* Discussão: analise o impacto do ambiente HPC no desempenho das implementações. Indique qual fila apresentou o melhor desempenho e explique os motivos para essa diferença.
+
+Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom](https://classroom.github.com/a/OKSGuF-b), link também disponível no Blackboard.**
 
 
 

@@ -151,3 +151,115 @@ scancel -u $USER
 
 
 Para mais consulte a documentação oficial em https://slurm.schedmd.com/documentation.html
+
+## Pra verificar Hardware
+
+##  **CPU**
+
+* **lscpu**
+  Mostra arquitetura, número de núcleos, threads, caches.
+
+  ```bash
+  lscpu
+  ```
+
+  > Exemplo de saída:
+
+  ```
+  Architecture:           x86_64
+  CPU(s):                 40
+  Thread(s) per core:     2
+  Core(s) per socket:     10
+  Socket(s):              2
+  L1d cache:              32K
+  L2 cache:               1M
+  L3 cache:               13M
+  ```
+
+* **cat /proc/cpuinfo**
+
+Lista detalhes por CPU lógico (modelo, MHz, cache).
+
+  ```bash
+  cat /proc/cpuinfo 
+  ```
+
+* **nproc**
+
+Mostra o número de CPUs disponíveis.
+
+  ```bash
+  nproc
+  ```
+
+## **Memória RAM**
+
+* **free -h**
+  Mostra uso e total de memória física e swap.
+
+  ```bash
+  free -h
+  ```
+
+* **cat /proc/meminfo**
+
+Detalhes avançados de memória (MemTotal, MemFree, Buffers, Cached).
+
+  ```bash
+  cat /proc/meminfo | grep -E "MemTotal|MemFree|MemAvailable|Swap"
+  ```
+
+* **vmstat**
+
+Estatísticas de memória, processos e CPU.
+
+  ```bash
+  vmstat 1 5
+  ```
+
+
+## **Cache**
+
+* **lscpu | grep cache**
+  Mostra rapidamente o tamanho das caches.
+
+  ```bash
+  lscpu | grep cache
+  ```
+
+
+* **ls /sys/devices/system/cpu/cpu0/cache/index*/size*\*
+
+Lista tamanhos de cada nível de cache (por CPU).
+
+  ```bash
+  cat /sys/devices/system/cpu/cpu0/cache/index*/size
+  ```
+
+Shell script para trazer de forma resumida informações úteis
+
+```bash
+echo '=== HOSTNAME ==='; hostname; echo; \
+ echo '=== MEMORIA (GB) ==='; \
+ cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Swap' | \
+ awk '{printf \"%s %.2f GB\\n\", \$1, \$2 / 1048576}'; \
+ echo; \
+ echo '=== CPU INFO ==='; \
+ lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'
+ echo '=== GPU INFO ==='; \
+ if command -v nvidia-smi &> /dev/null; then nvidia-smi; else echo 'nvidia-smi não disponível'; fi
+```
+Para executar dentro de um nó de computação:
+
+```bash
+srun --partition=normal --ntasks=1 --pty bash -c \
+"echo '=== HOSTNAME ==='; hostname; echo; \
+ echo '=== MEMORIA (GB) ==='; \
+ cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Swap' | \
+ awk '{printf \"%s %.2f GB\\n\", \$1, \$2 / 1048576}'; \
+ echo; \
+ echo '=== CPU INFO ==='; \
+ lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'
+ echo '=== GPU INFO ==='; \
+ if command -v nvidia-smi &> /dev/null; then nvidia-smi; else echo 'nvidia-smi não disponível'; fi"
+```

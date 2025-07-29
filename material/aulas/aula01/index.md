@@ -11,7 +11,7 @@ Para resolver problemas desse tipo, precisamos fazer um bom uso do hardware, pod
     Eu fui legal e organizei [aqui tudo aqui](../../teoria/aula01/index.md) pra você!
 
 
-### Atividade 01 — **Análise com Média Móvel de Leituras de Sensores**
+### Atividade 01 — **Python x C++**
 
 Você está trabalhando com sensores industriais que geram milhões de medições por dia, como temperatura, pressão e vibração. Monitorar apenas a última medição **não é confiável**: leituras oscilam naturalmente devido a ruídos ou pequenas flutuações.
 
@@ -184,13 +184,19 @@ int main() {
 
 
 ### Entrega da Atividade 01
+No arquivo README.md do Classroom, inclua:
+ 
+* Código-fonte em C++: o programa utilizado para os testes. 
 
-* Código C++ 
-* Tabela de comparação
-* Gráfico de comparação
-* Comentários sobre o que influenciou o desempenho
+* Tabela comparativa: com os resultados de todas as execuções
+
+* Gráfico comparativo: representando visualmente os resultados obtidos.
+
+* Análise de desempenho: comentários explicando quais fatores influenciaram o desempenho
 
 **Entrega até quinta 23h59 pelo link do [GitHub Classroom](https://classroom.github.com/a/GoLn_7KP), também disponível no Blackboard.**
+
 Lembre-se de preencher o [forumlário](https://forms.gle/K9FK8be9HjoJ4ypGA) para criar o seu acesso ao Cluster Franky, ele será usado a partir da próxima aula!
+
 !!! tip "Dica!"
     Lembre-se de consultar o material disponível em [Conteúdo teórico de apoio - Aula 01](../../teoria/aula01/index.md)
