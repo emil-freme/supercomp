@@ -39,23 +39,21 @@ ssh login@ip_do_cluster
 
 #### **Para Windows:**
 
-**Usando OpenSSH :**
 
-Abra o PowerShell ou Windows Terminal. Navegue até a pasta onde a chave privada (`id_rsa`) foi baixada, mova a chave para a pasta `.ssh` em seu diretório de usuário:
+**Usando MobaXTerm**
 
-```powershell
-mkdir $env:USERPROFILE\.ssh
-mv id_rsa $env:USERPROFILE\.ssh\
-```
+Baixe o MobaXterm Home Edition em:
+https://mobaxterm.mobatek.net/download-home-edition.html
 
-Certifique-se de que as permissões estão corretas:
-```powershell
-icacls $env:USERPROFILE\.ssh\id_rsa /inheritance:r /grant:r "$($env:USERNAME):(R)"
-```
-Conecte-se ao cluster usando o comando:
-```powershell
-ssh -i $env:USERPROFILE\.ssh\id_rsa login@ip_do_cluster
-```
+Execute a aplicação, com o MobaXterm aberto, clique em Session, depois em SSH.
+![moba1](imgs/moba1.png)
+
+Preencha todos os campos marcados em vermelho
+![moba2](imgs/moba2.png)
+
+Estabeleça a conexão, se tudo der certo, você verá algo como:
+![moba3](imgs/moba3.png)
+
 
 ### Configurar o VS Code para Acesso Remoto ao Cluster
 
@@ -69,9 +67,9 @@ Pressione `Ctrl+Shift+P` (ou `Cmd+Shift+P` no Mac) para abrir o painel de comand
 
 Digite `Remote-SSH: Add New SSH Host...` e selecione a opção.
 
-Insira o comando SSH que você utilizou anteriormente:
+Insira o comando SSH para conexão com o Franky:
 ```bash
-ssh -i ~/.ssh/id_rsa login@ip_do_cluster
+ssh -i Endereço_da_cahve/id_rsa login@ip_do_cluster
 ```
 Escolha o arquivo de configuração padrão (`~/.ssh/config` para Mac/Linux ou `C:\Users\seu_usuario\.ssh\config` para Windows).
 
@@ -85,7 +83,7 @@ O VS Code abrirá uma nova janela conectada ao ambiente remoto do cluster.
 
  Após a conexão, você pode abrir pastas e arquivos no cluster diretamente pelo VS Code.
 
- Utilize os recursos do VS Code, como o terminal integrado e o debug para trabalhar no cluster Franky.
+ Você pode utilizar os recursos do VS Code, como o terminal integrado e o debug para trabalhar no cluster Franky.
 
 
 ###  Executando a Atividade no Cluster Franky usando SLURM
@@ -115,9 +113,18 @@ Antes de começar a fazer pedidos de recursos pro SLURM, vamos conhecer os difer
 
 ```bash
 srun --partition=normal --ntasks=1 --cpus-per-task=1 --mem=1G --time=00:05:00 \
-     --pty bash -c "hostname && cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Swap' && lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'"
-
+--pty bash -c "hostname && \
+cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Swap' && \
+lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache' && \
+{ command -v nvidia-smi &> /dev/null && nvidia-smi || echo 'nvidia-smi não disponível ou GPU não detectada'; }" 
 ```
+
+Você deve ver algo como:
+
+![fila normal](imgs/fila_normal.png)
+
+
+
 `srun`
 
 > É o comando do SLURM usado para **executar uma tarefa interativamente** em um nó do cluster.
@@ -155,24 +162,19 @@ srun --partition=normal --ntasks=1 --cpus-per-task=1 --mem=1G --time=00:05:00 \
 > Solicita um terminal para o SLURM dentro do nó de computação.
 > Interessante para fazer testes no código ou realizar debugs
 
-`bash -c "hostname && cat /proc/meminfo | grep -E 'MemTotal|MemFree|MemAvailable|Swap' && lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'"`
+`{ command -v nvidia-smi &> /dev/null && nvidia-smi || echo 'nvidia-smi não disponível ou GPU não detectada'; }`
 
-> Indica que o SLURM vai executar **um conjunto de comandos bash**, definidos entre aspas (`"`).
-> Esses comandos serão executados **dentro do nó alocado pela fila**.
+> Esse trecho verifica se o comando `nvidia-smi` está disponível no sistema (ou seja, se há driver NVIDIA instalado e uma GPU NVIDIA acessível).
+>
+> * Se **`nvidia-smi` estiver disponível**, ele será executado e mostrará as informações da(s) GPU(s) no nó (como nome, memória, uso, driver etc).
+> * Se **não estiver disponível** (por exemplo, em nós sem GPU ou sem driver instalado), exibirá a mensagem:
+>   `"nvidia-smi não disponível ou GPU não detectada"`.
 
----
 
-| Comando                                                                  | O que faz                                                               |
-| ------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| `hostname`                                                               | Mostra o **nome do nó** que foi alocado pelo SLURM                      |
-| `cat /proc/meminfo \| grep -E 'MemTotal\|MemFree\|MemAvailable\|Swap'`   | Exibe **informações de RAM** diretamente do kernel               |
-| `lscpu \| grep -E 'Model name\|Socket\|Core\|Thread\|CPU\\(s\\)\|cache'` | Mostra Infos da CPU como **modelo do processador**, **núcleos**, **threads** e **caches** |
+!!! tip 
+      * Em **nós CPU-only** (como os da partição `normal`), é esperado que `nvidia-smi` **não esteja presente**.
+      * Para testar o comando em um nó **com GPU**, use `--partition=gpu` ou `--partition=monstrao`  para alocar nós com placas NVIDIA.
 
-> Obs: barras invertidas (`\`) são necessárias para indicar caracteres especiais corretamente, como os parênteses, quando o comando é passado dentro de aspas no `bash -c`.
-
-Você deve ver algo como:
-
-![fila normal](imgs/fila_normal.png)
 
 O comando abaixo faz exatamente a mesma coisa, mas eu coloquei ele dentro de um shell script para ter uma formatação melhor no display:
 
@@ -184,7 +186,9 @@ srun --partition=normal --ntasks=1 --pty bash -c \
  awk '{printf \"%s %.2f GB\\n\", \$1, \$2 / 1048576}'; \
  echo; \
  echo '=== CPU INFO ==='; \
- lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'"
+ lscpu | grep -E 'Model name|Socket|Core|Thread|CPU\\(s\\)|cache'
+ echo '=== GPU INFO ==='; \
+ if command -v nvidia-smi &> /dev/null; then nvidia-smi; else echo 'nvidia-smi não disponível'; fi"
 ```
 
 ![fila normal formatada](imgs/fila_normal_formatada.png)
@@ -227,7 +231,7 @@ media_py.slurm
 #SBATCH --job-name=OLHA_EU
 # define o nome do job. Esse nome aparece nas listas de jobs e é útil para identificar o job.
 
-#SBATCH --output=media_py.out
+#SBATCH --output=media_py%j.out
 # Especifica o arquivo onde a saída padrão (stdout) do job será salva.
 
 #SBATCH --ntasks=1
@@ -250,10 +254,10 @@ Como o C++ é uma linguagem que requer compilação, precisamos gerar o executá
 Dentro da pasta SCRATCH, compile seu código .cpp para gerar o binário.
 
 ```bash
-g++ media.cpp -o sem_otimizacao
-g++ -O2 media.cpp -o otimizacao_O2
-g++ -O3 media.cpp -o otimizacao_O3
-g++ -Ofast media.cpp -o otimizacao_Ofast
+g++ media_movel.cpp -o sem_otimizacao
+g++ -O2 media_movel.cpp -o otimizacao_O2
+g++ -O3 media_movel.cpp -o otimizacao_O3
+g++ -Ofast media_movel.cpp -o otimizacao_Ofast
 ```
 
 
@@ -263,7 +267,7 @@ media_cpp.slurm
 #SBATCH --job=OI_GALERA
 # Define o nome do job. Esse nome aparece nas listas de jobs e é útil para identificar o job.
 
-#SBATCH --output=media_cpp.out
+#SBATCH --output=media_cpp%j.out
 # Especifica o arquivo onde a saída padrão (stdout) do job será salva.
 
 #SBATCH --ntasks=1
@@ -327,7 +331,7 @@ Após a execução dos jobs, os resultados estarão disponíveis nos arquivos `.
   - Analise como as diferentes arquiteturas de hardware dentro do cluster impactam o desempenho do código, compare também com os seus resultados obtidos na atividade 1, executando na sua máquina local.
 
 !!! tip 
-      Se quiser explorar mais os comandos do SLURM, [temos uma material aqui que pode te ajudar](../../teoria/slurm.md)
+      Se quiser explorar mais os comandos do SLURM, [temos uma material aqui que pode te ajudar](../../teoria/comandos.md)
 
 
 **Entrega Atividade 2 - Relatório de Desempenho:**
@@ -336,7 +340,7 @@ Após a execução dos jobs, os resultados estarão disponíveis nos arquivos `.
  
    - Discuta o impacto do ambiente HPC no desempenho das implementações, qual fila teve o melhor desempenho, porque?.
 
-   - Submeta seu relatório até as **08h30 de segunda-feira 18/08, . pelo Classroom, link disponível no Blackboard.**
+   - Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom](https://classroom.github.com/a/OKSGuF-b), link também disponível no Blackboard.**
 
 
 

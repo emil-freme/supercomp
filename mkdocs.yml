@@ -9,16 +9,16 @@ extra:
     id_curso: 1
 
 theme:
-  feature:
-    tabs: true
-  name: 'material'
-  palette:
-      primary: 'grey'
-      accent: 'red'
-  font:
-    text: Roboto
-    code: Roboto Mono
-#  custom_dir: 'custom_theme'
+    name: material
+    features:
+        - navigation.tabs
+        - content.code.copy
+    palette:
+        primary: grey
+        accent: red
+    font:
+        text: Roboto
+        code: Roboto Mono
 
 docs_dir: material
 site_dir: docs
@@ -33,7 +33,7 @@ nav:
     - Burocracias: sobre.md
     - Aulas:
         - "01 - Problemas de HPC": aulas/aula01/index.md
-        #- "02 - Sistemas de HPC": aulas/aula02/index.md
+        - "02 - Sistemas de HPC": aulas/aula02/index.md
         #- "03 - Análise de desempenho": aulas/aula03/index.md
         #- "04 - Heurísticas e alocação eficiente de memória": aulas/aula04/index.md
         #- "05 - Programação paralela em CPU": aulas/aula05/index.md
