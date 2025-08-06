@@ -1,14 +1,17 @@
 
-Durante a aula, vimos que problemas computacionalmente complexos podem ser 
-- Grandes, uma quantidade de dados absurda, que não cabe em um computador de trabalho comum
-- Intensivo, Realiza calculos complexos e demorados, demandando horas ou dias de processamento intensivo
-- Combo, As vezes o problema tem as duas caracteristicas, tem uma grande quantidade de dados, demanda cálculos intesivos.
+Durante a aula, vimos que problemas computacionalmente complexos podem ser:
+
+- **Grandes:** uma quantidade de dados absurda, que não cabe em um computador de trabalho comum
+
+- **Intensivo:** Realiza calculos complexos e demorados, demandando horas ou dias de processamento intensivo
+
+- **Combo:** As vezes o problema tem as duas caracteristicas, tem uma grande quantidade de dados, demanda cálculos intesivos.
 
 
-Para resolver problemas desse tipo, precisamos fazer um bom uso do hardware, podemos começar usando uma linguagem de programação mais eficiente e planejando melhor o nosso código, usando as características da linguagem ao nosso favor.
+Para resolver problemas desse tipo, precisamos fazer um bom uso do hardware, podemos começar usando uma linguagem de programação mais eficiente e planejando melhor o nosso código, usando as características da linguagem a nosso favor.
 
 !!! tip "Conteúdo teórico de apoio - Aula 01"
-    Eu fui legal e organizei [aqui tudo aqui](../../teoria/aula01/index.md) pra você!
+    Se precisar de um apoio para relembrar conceitos importantes, [consulte o material disponível](../../teoria/aula01/index.md) pra você!
 
 
 ### Atividade 01 — **Python x C++**
@@ -182,21 +185,21 @@ int main() {
 
 ```
 
+!!! warning "CRIE SUA CONTA NO FRANKY!"
+    Lembre-se de preencher o [forumlário](https://forms.gle/K9FK8be9HjoJ4ypGA) para criar o seu acesso ao Cluster Franky, ele será usado a partir da próxima aula!
 
 ### Entrega da Atividade 01
-No arquivo README.md do Classroom, inclua:
- 
-* Código-fonte em C++: o programa utilizado para os testes. 
+Seu relatório deve estar em formato PDF contendo:
 
+* Identifique-se: Nome completo 
+ 
 * Tabela comparativa: com os resultados de todas as execuções
 
 * Gráfico comparativo: representando visualmente os resultados obtidos.
 
 * Análise de desempenho: comentários explicando quais fatores influenciaram o desempenho
 
-**Entrega até quinta 23h59 pelo link do [GitHub Classroom](https://classroom.github.com/a/GoLn_7KP), também disponível no Blackboard.**
-
-Lembre-se de preencher o [forumlário](https://forms.gle/K9FK8be9HjoJ4ypGA) para criar o seu acesso ao Cluster Franky, ele será usado a partir da próxima aula!
+**Entrega até quinta 23h59 pelo link do [GitHub Classroom](https://classroom.github.com/a/GoLn_7KP)**
 
 !!! tip "Dica!"
     Lembre-se de consultar o material disponível em [Conteúdo teórico de apoio - Aula 01](../../teoria/aula01/index.md)

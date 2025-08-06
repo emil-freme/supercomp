@@ -39,15 +39,15 @@
     |--------------|----------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | 11/ago (seg) | Aula 01  | Problemas de HPC; mapa de memória; Python × C++; desempenho; objetivos da disciplina  | Transcrição de códigos Python para C++; comparação de desempenho entre linguagens.|
     | 15/ago (sex) | Aula 02  | Sistemas de HPC; rede, hardware, filas, jobs; SLURM; clusters no Brasil e no mundo  | Testes com SLURM no Cluster Franky; comparação de desempenho em diferentes filas.|    
-    | 18/ago (seg) |  Aula 03  | Diagnóstico de código; profiling; discussão de soluções anteriores; introdução ao Projeto 1   | Aplicar profiling; relatório com gargalos, hipóteses de melhoria e comparação de desempenho. |
+    | 18/ago (seg) |  Aula 03  | Otimização e desempenho; discussão de soluções anteriores; | Otimização e desempenho. |
     | 22/ago (sex) | Aula 04  | Aleatoriedade, heurísticas, alocação de memória  | Ajustes em heurísticas, estrutura de dados e uso da memória de forma eficiente. |   
     | 25/ago (seg) | Aula 05  | Paralelismo em CPU; threads; cores; OpenMP; variáveis privadas e compartilhadas; scheduling  | Paralelismo com OpenMP; compartilhamento entre threads; efeitos do scheduler. |
     | 29/ago (sex) | Aula 06  | Efeitos colaterais do paralelismo; racing conditions; dependências; recursão | Aplicação no projeto: mapear problemas, levantar hipóteses de otimização e comparar desempenho. |
-    | 02/set (seg) | Aula 07  | Memória distribuída; comunicação com MPI; ponto-a-ponto e coletiva; grupos e comunicadores    | Comentários e direcionamentos sobre entrega parcial do projeto |
-    | 05/set (sex) | Aula 08  | Estratégias híbridas MPI + OpenMP  | Discussão de implementações no projeto |
+    | 02/set (seg) | Aula 07  | Memória distribuída; comunicação com MPI; ponto-a-ponto e coletiva; grupos e comunicadores    | Lançamento do projeto |
+    | 05/set (sex) | Aula 08  | Estratégias híbridas MPI + OpenMP  | |
     | 08/set (seg) | Aula 09  | Aula estúdio | Suporte ao Projeto  |
     | 12/set (sex) | Aula 10  | Palestra NVIDIA - CUDA |Palestra NVIDIA - CUDA   |
-    | 15/set (seg) | Aula 11  | Aula estúdio  | Finalização do Projeto 1 |
+    | 15/set (seg) | Aula 11  | Aula estúdio  | Suporte ao Projeto  |
     | 19/set (sex) | Aula 12  | Devolutiva do Projeto | Discussão das soluções apresentadas e feedback.|
     | 22/set (seg) | Aula 13  | Aula estúdio | Últimos ajustes no Projeto 1. Entrega final até 23h59. |
     | 25/set–03/out| —        | Provas intermediárias | Avaliação dos conteúdos até MPI.|
@@ -65,22 +65,16 @@
 
 
 ??? note "Atividades (Individual) 15%"
-
-    | **Atividade**                                 | **Entrega**        | **Peso (pontos)** |
-    | ----------------------- --------------------- | ------------------ | ----------------- |
-    | Responder ao questionário de pesquisa         | A definir          | 0,95              |
-    | Participar da entrevista voluntária sobre a disciplina | A definir | 1,90              |
-    | Transcrever códigos Python para C++ e comparar desempenho (CPU)| 14/08  | 1,20         |
-    | Primeiros pedidos de submissão com SLURM + testes em filas (CPU)   | 15/08  | 1,20     |
-    | Paralelismo em CPU                                 | 25/08              | 1,20         |
-    | Paralelismo Distribuído em múltiplos nós (CPU)     |  02/09              | 1,20         |
-    | Data race em GPU                                   | 10/10              | 2,45         |
-    | Convolução em GPU                                  | 13/10              | 2,45         |
-    | Gerenciamento de dados em computação paralela e distribuída em GPU | 24/10  | 2,45     |
+    | Percentual de Atividades | Conceito | Com Participação Voluntária |
+    |--------------------------|----------|-----------------------------|
+    | 50%                     | C        | C+                          |
+    | 70%                     | B        | B+                          |
+    | 90%                     | A        | A+                          |
 
 
 
-??? note "Projeto 1 (Grupo) 15%"
+
+??? note "Projeto 1 (Grupo) 10%"
 
     ### **Mineração de criptomoedas em CPU**
     Este projeto consiste na implementação e otimização de um minerador de criptomoedas que roda em CPU. Aplicando técnicas de paralelismo para melhorar desempenho no cluster Franky. A dificuldade da mineração é ajustada pela quantidade de zeros no hash, aumentando o desafio computacional conforme otimizimos a aplicação.
@@ -110,7 +104,7 @@
     | A             | A+        |
 
 
-??? note "Projeto 2 (Grupo) 15%"
+??? note "Projeto 2 Individual 25%"
     Projeto Minerador em GPU 
     Neste projeto, o foco é explorar o uso de paralelismo e estratégias de otimização em GPU para maximizar o desempenho computacional.
 

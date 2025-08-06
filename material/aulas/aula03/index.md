@@ -166,75 +166,9 @@ srun --partition=monstrao --ntasks=1 ./matmul_seq 200
 ```bash
 srun --partition=monstrao --ntasks=1 ./matmul_seq 768
 ```
-
-### 3. Profiling com Nsight Systems e perf
-
-Sugestão de **script SLURM** para fazer profiling no monstrão:
-
-
-```bash
-#!/bin/bash
-#SBATCH --job-name=prof_monstrao
-#SBATCH --partition=monstrao
-#SBATCH --ntasks=1
-#SBATCH --mem=4G
-#SBATCH --time=00:05:00
-#SBATCH --output=prof_monstrao_%j.out
-#SBATCH --error=prof_monstrao_%j.err
-
-
-# Lista de blocos para testar: ingênuo, L1, L2, L3
-BLOCKS=(0 36 200 768)
-
-echo "=== Início da execução em $(date) ==="
-echo "Rodando nos blocos: ${BLOCKS[@]}"
-
-for B in "${BLOCKS[@]}"; do
-    echo
-    echo ">>> Rodando bloco B=${B}..."
-
-    # Nome base para relatórios
-    REPORT_NAME="report_B${B}"
-
-    # Executar com Nsight Systems e perf juntos
-    nsys profile -o ${REPORT_NAME} --force-overwrite true \
-        perf stat -e cache-references,cache-misses,cycles,instructions \
-        ./matmul_seq $B
-
-    echo ">>> Concluído B=${B}, relatório salvo em ${REPORT_NAME}.qdrep"
-done
-
-echo "=== Fim da execução em $(date) ==="
-```
-
-
-Submeta para o monstrão:
-
-```bash
-sbatch profiling_all.slurm
-```
-
-3. Resultado:
-
-* Arquivos `.qdrep` para cada configuração:
-
-  * `report_B0.qdrep` (ingênuo)
-  * `report_B36.qdrep` (L1)
-  * `report_B200.qdrep` (L2)
-  * `report_B768.qdrep` (L3)
-* Arquivo `profiling_all_<jobid>.out` com métricas do **perf**.
-
-4. Abra os relatórios no Nsight Systems:
-
-```bash
-nsight-sys report_B200.qdrep
-```
-
-
 ## Explorando Ordenação de Loops e Flags de Otimização em Diferentes Filas**
 
-Na parte 1, você explorou o efeito do **tiling** e do tamanho do bloco na redução de *cache misses*.
-Agora, o objetivo é entender como **a organização dos loops** e **as otimizações do compilador** influenciam o desempenho do mesmo código.
+Você já explorou o efeito do **tiling**. Agora, o objetivo é entender como **a organização dos loops** e **as otimizações do compilador** influenciam o desempenho do mesmo código.
 
 
 ### 1. Alterando a Ordem dos Loops
@@ -247,15 +181,14 @@ Compile o programa com cada conjunto de flags e execute usando diferentes blocos
 
 ### 3. Rodar em Diferentes Filas do Cluster
 
-Após identificar as melhores combinações de loop e flags no **monstrao**, identifique quais são os tamanhos das memórias L1, L2 e L3 na fila CPU e na fila GPU e repita os testes para esses hardwares.
+Após identificar as melhores combinações de loop e flags no **monstrao**, identifique quais são os tamanhos das memórias L1, L2 e L3 na fila GPU e repita os testes.
 
 
 ### Perguntas para responder no relatório:
 
-1. A troca de ordem dos loops aumentou ou reduziu *cache misses*? Por quê?
-3. Houveram diferenças entre os nós **monstrao**, **cpu** e **gpu**? Quais?
-4. O que o profiling mostrou sobre o uso de CPU em cada versão?
-5. Qual o **tamanho de bloco** que apresentou o melhor equilíbrio entre tempo de execução e aproveitamento de cache?
+1. A troca de ordem dos loops melhorou ou piorou o tempo de execução? Por quê?
+2. Houveram diferenças entre os nós **monstrao** e **gpu**? Quais?
+3. Qual o **tamanho de bloco** que apresentou o melhor equilíbrio entre tempo de execução e aproveitamento de cache em cada fila?
 
 
 ## Entregáveis:
@@ -263,7 +196,7 @@ No arquivo README.md do Classroom, inclua obrigatoriamente:
 
 * Identificação: seu nome completo
 
-* Tabelas comparativas: contendo os resultados obtidos (tempo, cache misses, flags de compilação etc.)
+* Tabelas comparativas: contendo os resultados obtidos (tempo, flags de compilação etc.)
 
 * Gráficos comparativos: que ilustrem as diferenças de desempenho entre as versões testadas
 
