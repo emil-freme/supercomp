@@ -39,7 +39,7 @@ Você pode consultar o detalhamento completo do curso [neste link](sobre.md).
     - **Atividades - 15%**.
     - **Projeto 1 - 10%**
     - **Avaliação Intermediária - 25%**
-    - **Projeto 2 - 25%**
+    - **Projeto 2 - 20%**
     - **Avaliação Final - 30%**
 
 ## Equipe
