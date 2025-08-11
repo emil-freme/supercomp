@@ -203,3 +203,11 @@ Lembre-se de preencher o [forumlário](https://forms.gle/K9FK8be9HjoJ4ypGA) para
 
 !!! tip "Dica!"
     Lembre-se de consultar o material disponível em [Conteúdo teórico de apoio - Aula 01](../../teoria/aula01/index.md)
+
+
+!!! tip "Links úteis"
+    Randômicos [aqui](https://www.w3schools.com/cpp/cpp_howto_random_number.asp), [aqui](https://www.geeksforgeeks.org/cpp/rand-and-srand-in-ccpp/) e [aqui](https://www.geeksforgeeks.org/cpp/stduniform_real_-distribution-class-in-c-with-examples/)
+    Vetores [aqui](https://www.w3schools.com/cpp/cpp_vectors.asp) e [aqui](https://www.geeksforgeeks.org/cpp/vector-in-cpp-stl/)
+    Passagem de valor por referência - [aqui](https://www.w3schools.com/cpp/cpp_references.asp) e [aqui](https://www.geeksforgeeks.org/cpp/references-in-cpp/)
+    Ponteiros [aqui](https://www.w3schools.com/cpp/cpp_pointers.asp) e [aqui](https://www.geeksforgeeks.org/cpp/cpp-pointers/)    
+    [Aritimética de ponteiros](https://www.geeksforgeeks.org/cpp/cpp-pointer-arithmetic/)

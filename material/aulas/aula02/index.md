@@ -344,8 +344,11 @@ Entregue um arquivo PDF contendo obrigatoriamente:
 
 Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom](https://classroom.github.com/a/OKSGuF-b).**
 
-
-
+!!! tip "Links úteis"
+      [Guia do Slurm - CENAPAD](https://cenapad.ufc.br/documentacao/guia-do-slurm/)
+      [Documentação Oficial SLURM](https://slurm.schedmd.com/quickstart.html
+      )
+      [Guia de Comandos SLURM](https://slurm.schedmd.com/pdfs/summary.pdf)
 
 
 
