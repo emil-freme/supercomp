@@ -4,8 +4,8 @@ Explorar técnicas de otimização de código sequencial em C++ a partir da aná
 O foco será:
 
 * Compreender a relação entre **hierarquia de memória (L1, L2, L3)** e desempenho.
-* Realizar profiling para avaliar o desempenho e o uso dos recursos do hardware pelo código
 * Aplicar **tiling (fateamento em blocos)** para melhorar o aproveitamento da memória cache.
+* Reorganizar estruturas de dados para um melhor aproveitamento do principio da localidade espacial.
 
 
 ##  Contexto

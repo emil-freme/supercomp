@@ -1,4 +1,4 @@
-# **Aula 02: Acessando o Cluster Franky**
+# Aula 02: Acessando o Cluster Franky
 
 Na Atividade 2, você irá executar as implementações que foram testadas na Atividade 1, mas agora no ambiente de um cluster HPC usando SLURM. O objetivo é observar como o ambiente de cluster, com suas diferentes arquiteturas de hardware, pode impactar o desempenho das operações computacionalmente intensivas que você já explorou.
 
@@ -6,7 +6,7 @@ Na Atividade 2, você irá executar as implementações que foram testadas na At
 
 Para ter acesso ao Cluster Franky você precisa configurar suas credenciais de acesso e realizar acesso remoto via SSH.
 
-As chaves foram enviadas para o seu email Insper, Faça o download da pasta completa, que contém os arquivos `id_rsa` (chave privada) e `id_rsa.pub` (chave pública). Dependendo do sistema operacional que você utiliza, siga as instruções abaixo para configurar corretamente seu acesso ao cluster.
+As chaves foram enviadas para o seu email Insper, Faça o download da pasta completa, que contém os arquivos `id_rsa` (chave privada) e `id_rsa.pub` (chave pública). Dependendo do sistema operacional que você utiliza, siga as instruções abaixo para configurar corretamente seu acesso ao cluster Franky.
 
 #### **Para Macbook ou Linux:**
 
@@ -91,10 +91,8 @@ O VS Code abrirá uma nova janela conectada ao ambiente remoto do cluster.
 Um arquivo .slurm é usado para "lançar jobs" no sistema SLURM, especificando os recursos necessários para a execução, como memória, número de máquinas e núcleos. Nesse arquivo, também definimos como desejamos o output do executável e onde o sistema pode encontrar o arquivo a ser executado. Como a equipe que gerencia o Cluster definiu que os jobs sejam lançados apenas da pasta SCRATCH, podemos omitir o caminho do arquivo nos nossos arquivos .slurm.
 
 !!! warning
-      As instruções **#SBATCH** são tecnicamente consideradas "comentários" pelo interpretador de comandos do shell (bash), **mas não são realmente ignoradas**. Quando você escreve um script para ser executado pelo SLURM, o bash interpreta as linhas #SBATCH como comentários normais, enquanto o gerenciador de jobs SLURM interpreta essas mesmas linhas como **diretivas que definem como o job deve ser executado.**
+      Quando você escreve um script para ser executado pelo SLURM o gerenciador de jobs SLURM interpreta `#SBATCH` como **diretivas que definem como o job deve ser executado.**
 
-!!! tip 
-      Não é necessário neste momento, mas se você quiser transferir arquivos da sua máquina para o cluster e vice versa, você pode usar o comando scp [mais detalhes aqui](../../teoria/comandos-ssh.md)
 
 
 
@@ -336,7 +334,7 @@ Após a execução dos jobs, os resultados estarão disponíveis nos arquivos `.
 
 **Entrega Atividade 2 - Relatório de Desempenho:**
 
-No arquivo README.md do Classroom, inclua:
+Entregue um arquivo PDF contendo obrigatoriamente:
 
 * Identificação: seu nome completo.
 
@@ -344,7 +342,7 @@ No arquivo README.md do Classroom, inclua:
 
 * Discussão: analise o impacto do ambiente HPC no desempenho das implementações. Indique qual fila apresentou o melhor desempenho e explique os motivos para essa diferença.
 
-Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom](https://classroom.github.com/a/OKSGuF-b), link também disponível no Blackboard.**
+Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom](https://classroom.github.com/a/OKSGuF-b).**
 
 
 

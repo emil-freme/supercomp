@@ -104,7 +104,7 @@
     | A             | A+        |
 
 
-??? note "Projeto 2 Individual 20%"
+??? note "Projeto 2 (Individual) 20%"
     Projeto Minerador em GPU 
     Neste projeto, o foco é explorar o uso de paralelismo e estratégias de otimização em GPU para maximizar o desempenho computacional.
 

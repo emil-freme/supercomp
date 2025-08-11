@@ -46,5 +46,6 @@ Você pode consultar o detalhamento completo do curso [neste link](sobre.md).
 
 !!! people "Equipe atual"
     - ![Lícia](equipe/licia.jpeg) **Lícia Sales** *Professora*
+    - ![Laiz](equipe/Laiz.jpeg) **Ana Laiz** *Ninja*
     - ![Victor](equipe/victor.jpg) **Victor Cordeiro** *Técnico do lab.*
   

@@ -11,7 +11,7 @@ Durante a aula, vimos que problemas computacionalmente complexos podem ser:
 Para resolver problemas desse tipo, precisamos fazer um bom uso do hardware, podemos começar usando uma linguagem de programação mais eficiente e planejando melhor o nosso código, usando as características da linguagem a nosso favor.
 
 !!! tip "Conteúdo teórico de apoio - Aula 01"
-    Se precisar de um apoio para relembrar conceitos importantes, [consulte o material disponível](../../teoria/aula01/index.md) pra você!
+    Eu fui legal e organizei [aqui tudo aqui](../../teoria/aula01/index.md) pra você!
 
 
 ### Atividade 01 — **Python x C++**
@@ -185,14 +185,12 @@ int main() {
 
 ```
 
-!!! warning "CRIE SUA CONTA NO FRANKY!"
-    Lembre-se de preencher o [forumlário](https://forms.gle/K9FK8be9HjoJ4ypGA) para criar o seu acesso ao Cluster Franky, ele será usado a partir da próxima aula!
 
 ### Entrega da Atividade 01
-Seu relatório deve estar em formato PDF contendo:
-
-* Identifique-se: Nome completo 
+No arquivo README.md do Classroom, inclua:
  
+* Código-fonte em C++: o programa utilizado para os testes. 
+
 * Tabela comparativa: com os resultados de todas as execuções
 
 * Gráfico comparativo: representando visualmente os resultados obtidos.
@@ -200,6 +198,8 @@ Seu relatório deve estar em formato PDF contendo:
 * Análise de desempenho: comentários explicando quais fatores influenciaram o desempenho
 
 **Entrega até quinta 23h59 pelo link do [GitHub Classroom](https://classroom.github.com/a/GoLn_7KP)**
+
+Lembre-se de preencher o [forumlário](https://forms.gle/K9FK8be9HjoJ4ypGA) para criar o seu acesso ao Cluster Franky, ele será usado a partir da próxima aula!
 
 !!! tip "Dica!"
     Lembre-se de consultar o material disponível em [Conteúdo teórico de apoio - Aula 01](../../teoria/aula01/index.md)
