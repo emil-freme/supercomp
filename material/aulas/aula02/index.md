@@ -331,19 +331,6 @@ Após a execução dos jobs, os resultados estarão disponíveis nos arquivos `.
 !!! tip 
       Se quiser explorar mais os comandos do SLURM, [temos uma material aqui que pode te ajudar](../../teoria/comandos.md)
 
-
-**Entrega Atividade 2 - Relatório de Desempenho:**
-
-Entregue um arquivo PDF contendo obrigatoriamente:
-
-* Identificação: seu nome completo.
-
-* Relatório: apresente os resultados obtidos em cada implementação, acompanhados de gráficos que mostrem o tempo de execução para cada caso testado.
-
-* Discussão: analise o impacto do ambiente HPC no desempenho das implementações. Indique qual fila apresentou o melhor desempenho e explique os motivos para essa diferença.
-
-Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom](https://classroom.github.com/a/OKSGuF-b).**
-
 !!! tip "Links úteis"
       [Guia do Slurm - CENAPAD](https://cenapad.ufc.br/documentacao/guia-do-slurm/)
       [Documentação Oficial SLURM](https://slurm.schedmd.com/quickstart.html
@@ -351,7 +338,7 @@ Submeta seu relatório até as **08h30 de segunda-feira 18/08, . [pelo Classroom
       [Guia de Comandos SLURM](https://slurm.schedmd.com/pdfs/summary.pdf)
 
 
-
+## **Esta atividade não tem entrega, Bom final de semana!**
 
 
 

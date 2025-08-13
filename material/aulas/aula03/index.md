@@ -192,11 +192,11 @@ Após identificar as melhores combinações de loop e flags no **monstrao**, ide
 
 
 ## Entregáveis:
-No arquivo README.md do Classroom, inclua obrigatoriamente:
+Submeta via [Classroom](https://classroom.github.com/a/DnVGRWYD) um arquivo PDF contendo obrigatoriamente:
 
 * Identificação: seu nome completo
 
-* Tabelas comparativas: contendo os resultados obtidos (tempo, flags de compilação etc.)
+* Tabelas comparativas: contendo os resultados obtidos
 
 * Gráficos comparativos: que ilustrem as diferenças de desempenho entre as versões testadas
 
