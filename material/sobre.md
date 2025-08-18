@@ -34,34 +34,37 @@
 
 
 ??? tip "Plano de Aulas - Supercomputação (2025.2)"
-
     | Data         | Aula     | Tópicos Abordados                                                                                                           | Atividades                                                                                                                                                     |
     |--------------|----------|----------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-    | 11/ago (seg) | Aula 01  | Problemas de HPC; mapa de memória; Python × C++; desempenho; objetivos da disciplina  | Transcrição de códigos Python para C++; comparação de desempenho entre linguagens.|
-    | 15/ago (sex) | Aula 02  | Sistemas de HPC; rede, hardware, filas, jobs; SLURM; clusters no Brasil e no mundo  | Testes com SLURM no Cluster Franky; comparação de desempenho em diferentes filas.|    
-    | 18/ago (seg) |  Aula 03  | Otimização e desempenho; discussão de soluções anteriores; | Otimização e desempenho. |
+    | 11/ago (seg) | Aula 01  | Problemas de HPC; mapa de memória; Python × C++; desempenho; objetivos da disciplina; passagem de argumentos; recursos de C++ | Transcrição de códigos Python para C++; comparação de desempenho entre linguagens. |
+    | 15/ago (sex) | Aula 02  | Sistemas de HPC; rede, hardware, filas, jobs; SLURM; clusters no Brasil e no mundo  | Testes com SLURM no Cluster Franky; comparação de desempenho em diferentes filas. |    
+    | 18/ago (seg) | Aula 03  | Hierarquia de memória (L1, L2, L3); técnica de Tiling (fateamento em blocos); princípios de localidade espacial e temporal | Aplicar tiling para melhorar o uso de cache; reorganizar estruturas de dados para melhor localidade. |
     | 22/ago (sex) | Aula 04  | Aleatoriedade, heurísticas, alocação de memória  | Ajustes em heurísticas, estrutura de dados e uso da memória de forma eficiente. |   
     | 25/ago (seg) | Aula 05  | Paralelismo em CPU; threads; cores; OpenMP; variáveis privadas e compartilhadas; scheduling  | Paralelismo com OpenMP; compartilhamento entre threads; efeitos do scheduler. |
-    | 29/ago (sex) | Aula 06  | Efeitos colaterais do paralelismo; racing conditions; dependências; recursão | Aplicação no projeto: mapear problemas, levantar hipóteses de otimização e comparar desempenho. |
-    | 02/set (seg) | Aula 07  | Memória distribuída; comunicação com MPI; ponto-a-ponto e coletiva; grupos e comunicadores    | Lançamento do projeto |
-    | 05/set (sex) | Aula 08  | Estratégias híbridas MPI + OpenMP  | |
-    | 08/set (seg) | Aula 09  | Aula estúdio | Suporte ao Projeto  |
-    | 12/set (sex) | Aula 10  | Palestra NVIDIA - CUDA |Palestra NVIDIA - CUDA   |
-    | 15/set (seg) | Aula 11  | Aula estúdio  | Suporte ao Projeto  |
-    | 19/set (sex) | Aula 12  | Devolutiva do Projeto | Discussão das soluções apresentadas e feedback.|
-    | 22/set (seg) | Aula 13  | Aula estúdio | Últimos ajustes no Projeto 1. Entrega final até 23h59. |
-    | 25/set–03/out| —        | Provas intermediárias | Avaliação dos conteúdos até MPI.|
-    | 06/out (seg) | Aula 14  | Profiling em GPU; warps e SIMD; divergência; alocação de memória  | Estudo de caso aplicado   |
-    | 10/out (sex) | Aula 15  | Histogramming; data race em GPU; atomic; throughput | Estudo de caso aplicado.                 |
-    | 13/out (seg) | Aula 16  | Técnicas stencil; convolução; tile boundaries; agendamento de threads                   | Estudo de caso aplicado. |
-    | 15/out (sex) | Aula 17  | Estabilidade numérica; ponto flutuante; controle de erro | Estudo de caso aplicado.            |
-    | 24/out (seg) | Aula 18  | Estratégias híbridas com MPI + CUDA; gerenciamento de dados | Estudo de caso aplicado.            |
-    | 27/out (sex) | Aula 19  | Apresentação do Projeto 2   | Conversa sobre estratégias de otimização |
-    | 31/out (seg) | Aula 20  | Aula estúdio  |  Aula estúdio |
-    | 03/nov (sex) | Aula 21  | Palestra NVIDIA – OpenACC  | Introdução ao OpenACC. |
-    | 07/nov (seg) | Aula 22  | Aula estúdio  | Aula estúdio  |
-    | 10/nov (sex) | Aula 23  | Simulado da prova final       | Revisão prática. |
-    | 14/nov (seg) | Aula 24  | Encerramento da disciplina. | **Entrega final do Projeto até 23h59.** |
+    | 29/ago (sex) | Aula 06  | Efeitos colaterais do paralelismo; racing conditions; dependências; recursão | Estudo de caso: mapear problemas, levantar hipóteses de otimização e comparar desempenho. |
+    | 01/set (seg) | Aula 07  | Memória distribuída; comunicação com MPI; ponto-a-ponto e coletiva; grupos e comunicadores    | Paralelismo com MPI; comunicação entre nós. |
+    | 05/set (sex) | Aula 08  | Estratégias híbridas MPI + OpenMP  | Estudo de caso com MPI + OpenMP, levantamento de gargalos e possíveis otimizações. |
+    | 08/set (seg) | Aula 09  | Aula estúdio | Suporte ao Projeto 1 – Mineração de criptomoedas em CPU |
+    | 12/set (sex) | Aula 10  | Palestra NVIDIA - CUDA | Palestra NVIDIA - CUDA |
+    | 15/set (seg) | Aula 11  | Aula estúdio  | Suporte ao Projeto 1 – Mineração de criptomoedas em CPU |
+    | 19/set (sex) | Aula 12  | Devolutiva do Projeto 1 | Discussão das soluções apresentadas e feedback. |
+    | 22/set (seg) | Aula 13  | Aula estúdio | Ajustes finais no Projeto 1 – Mineração de criptomoedas em CPU |
+    | 26/set (sex) | Aula 14  | Prova Intermediária | Avaliação dos conteúdos até Estratégias híbridas MPI + OpenMP. |
+    | 29/set (seg) | Aula 15  | Profiling em GPU; warps e SIMD; divergência; alocação de memória  | Atividade prática de Profiling em GPU, análise de divergências e uso de memória. |
+    | 06/out (seg) | Aula 16  | Histogramming; data race em GPU; atomic; throughput | Estudo de caso aplicado. |
+    | 10/out (sex) | Aula 17  | Técnicas stencil; convolução; tile boundaries; agendamento de threads | Estudo de caso aplicado. |
+    | 13/out (seg) | Aula 18  | Estabilidade numérica; ponto flutuante; controle de erro | Estudo de caso aplicado. |
+    | 17/out (sex) | Aula 19  | Estratégias híbridas com MPI + CUDA; gerenciamento de dados | Atividade prática com múltiplas GPUs. |
+    | 20/out (seg) | Aula 20  | Resumo das estratégias de otimização; discussão sobre aplicação em projeto | Discussão coletiva de estratégias de otimização. |
+    | 24/out (sex) | Aula 21  | Apresentação do Projeto 2 | Discussão sobre estratégias de otimização para aplicação no projeto. |
+    | 27/out (seg) | Aula 22  | Aula estúdio | Suporte ao Projeto 2 – Mineração de criptomoedas em GPU |
+    | 31/out (sex) | Aula 23  | Palestra NVIDIA – OpenACC | Introdução ao OpenACC |
+    | 03/nov (seg) | Aula 24  | Aula estúdio | Suporte ao Projeto 2 – Mineração de criptomoedas em GPU |
+    | 07/nov (sex) | Aula 25  | Aula estúdio | Suporte ao Projeto 2 – Mineração de criptomoedas em GPU |
+    | 10/nov (seg) | Aula 26  | Devolutiva do Projeto 2 | Ajustes finais após feedback ao Projeto 2 |
+    | 14/nov (sex) | Aula 27  | Simulado da Avaliação Final | Revisão prática. |
+    | 17/nov (seg) | Aula 28  | Avaliação Final | Avaliação Final |
+    | 24/nov (seg) | Aula 29  | Avaliação Final | Encerramento e avaliação final |
 
 
 ??? note "Atividades (Individual) 15%"
